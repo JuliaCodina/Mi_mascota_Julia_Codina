@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio</title>
+</head>
+<body>
+    <nav>
+
+        <a href={% url "crear_mascota" %}>Crear Mascota</a>
+        <a href={% url "datos_de_mascotas" %}>Datos de Mascotas</a>
+    </nav>
+    <p> {{hora}} </p>
+    <section id="quienes" >
+        <h2>Quienes somos</h2>
+        <p>Somos un apasionado equipo de amantes de los animales, unidos por el cariño y la devoción hacia nuestras queridas mascotas. Cada uno de nosotros comparte una conexión especial con nuestros compañeros.
+        </p>
+        <p>Sin embargo, como cualquier dueño responsable, sabemos que cuidar de nuestras mascotas implica más que solo abrazos y caricias. La salud y el bienestar de nuestros amigos peludos son de suma importancia. Por eso, hemos decidido crear un sistema integral para gestionar todos los aspectos relacionados con su salud.
+        </p>
+    </section>
+    <section id="que" >
+        <h2>Qué hacemos</h2>   
+        <p>Nuestro sistema abarca desde el seguimiento de las visitas al veterinario hasta el control de las vacunas y la administración de medicamentos. Aquí hay un vistazo a algunas de las características clave:
+        </p>
+            <ul class="listas-main-index">
+                <li>
+                    Historial médico centralizado: Mantenemos un registro detallado de todas las visitas al veterinario, tratamientos y procedimientos realizados. Esto nos permite rastrear la evolución de la salud de nuestras mascotas a lo largo del tiempo. También se puede enviar facilmente esta información a sus veterinarios de confianza.
+                </li>
+                <li>
+                    Seguimiento de medicamentos: Llevamos un registro de los medicamentos recetados, las dosis y los horarios de administración. 
+                </li>
+                <li>
+                    Dieta y ejercicio: También incluimos un módulo de notas para registrar la alimentación diaria y el nivel de actividad física de nuestras mascotas. Esto nos ayuda a mantener un equilibrio saludable y prevenir problemas de peso.
+                </li>
+                <li>
+                    Comunidad de apoyo: Compartimos consejos, historias y experiencias con otros dueños de mascotas en nuestra comunidad en línea. Juntos, aprendemos y crecemos como amantes de los animales.
+                </li>
+            </ul>
+    <p>En resumen, nuestro sistema es como un “carnet de salud” digital para nuestras mascotas. Estamos emocionados de seguir mejorando y expandiendo esta plataforma para garantizar que nuestras queridas compañeras tengan vidas largas, felices y saludables.  
+        </p>
+    </section>   
+</body>
+</html>

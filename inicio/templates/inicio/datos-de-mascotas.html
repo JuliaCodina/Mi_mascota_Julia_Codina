@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datos de mascotas</title>
+</head>
+<body>
+    <nav>
+        <a href={% url "inicio" %}>Inicio</a>
+        <a href={% url "crear_mascota" %}>Crear Mascota</a>
+    </nav>
+    <h1>Datos de mascotas</h1>
+    <form action="">
+        {{formulario}}
+        <input type="submit" value="Buscar">
+    </form>
+
+    {% if mascota %}
+
+        <ul>
+            {% for mascota in mascotas %}
+                <li>
+                    {{mascota}}
+                </li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+    <p>No hay mascotas cargados</p>
+    {% endif %}
+
+</body>
+</html>
