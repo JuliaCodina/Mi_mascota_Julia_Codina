@@ -6,3 +6,5 @@ Cuenta con un formulario de perfil de la mascota y otro formulario de historia c
 Se hará un listado de búsqueda por mascota
 
  http://127.0.0.1:8000/
+
+ No pude hacer funcionar la página
