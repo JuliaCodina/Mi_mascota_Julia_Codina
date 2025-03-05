@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+ {% load static %}   
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sistema para la gestión de la salud de una o varias mascotas. Funciona como un carnet de salud digital. Permite, entre otros, tener un historial médico centralizado, hacer un seguimiento de medicamentos, alimentación y ejercicio. Cuenta con una comunidad de apoyo">
+    <meta name="keywords" content="CELOS, ALERGIAS, VACUNAS, POLIVALENTE, RABIA, TRIPLE, FELINA, CANINA, VIF, VILEF, LABORATORIO, SANGRE, ANÁLISIS, ECOGRAFÍA, RADIOGRAFÍA, RAYOS, ECO, ELECTROCARDIOGRAMA, CORTE, PELO, PELUQUERÍA, BAÑO, COMUNIDAD, AYUDA, ASESORAMIENTO, ESTRÉS, ALIVIO, RELAJAR, RELAJACIÓN, COMIDA, SALUDABLE, INYECCIONES, INYECCIÓN, INOCULACIÓN, APLICACIÓN, DOSIS, MASAJES, PASTILLAS, SUERO, AGUJAS, VIAS, PERROS, GATOS, MASCOTA, MASCOTAS, SALUD, CELOS, ALERGIAS, VACUNACIÓN, VACUNAS, ENFERMEDAD, LABORATORIO, RAYOS, RADIOGRAFÍAS, SANGRE, ANÁLISIS, ECOGRAFÍA, ESTUDIOS, BIENESTAR, SISTEMA, INTEGRAL, GESTION, GESTIONAR, SEGUIMIENTO, VISITAS, VETERINARIO, CONTROL, VACUNAS, ADMINISTRACIÓN, MEDICAMENTOS, HISTORIAL, MEDICO, CENTRAL, CENTRALIZADO, REGISTRO, TRATAMIENTOS, PROCEDIMIENTOS, EVOLUCIÓN, VETERINARIOS, NUTRICIONISTA, RECETAS, DOSIS, HORARIOS, DIETA, EJERCICIO, NOTAS, ALIMENTACIÓN, ACTIVIDAD, FÍSICA, EQUILIBRIO, SALUDABLE, PROBLEMAS, PESO, COMUNIDAD, APOYO, CONSEJOS, HISTORIAS, EXPERIENCIAS, CARNET, VIDAS, FELICES">
+    <title>La salud de nuestras mascotas: presentacion y objetivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href={% static "css/main.css" %}>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body id="pagina">
+
+    <header>
+
+        <section id="portada">
+            <!--logo margen izquierdo-->
+                <div >
+                    <img src= {% static "images/mi-mascota-logo.jpg" %} alt="Logo Mi Mascota" class="portada-imagen">
+                </div>
+        <!--título centrado-->           
+            <div class="portada-titulo">
+                <h1>
+                    MI MASCOTA 
+                </h1>
+            </div> 
+        </section>
+        <nav>
+            <section id="menu-5col">
+                <div class="portada-menu">
+                    <a href={% url "inicio" %} class="link-menu">Inicio</a>
+                </div>
+                <div class="portada-menu">
+                    <a href={% url "crear_mascota" %} class="link-menu">Crear Mascota</a>
+                </div>
+                <div class="portada-menu">
+                    <a href={% url "datos_de_mascotas" %} class="link-menu">Datos de Mascotas</a>
+                </div>
+                {% if request.user.is_authenticated %}
+                    <div class="portada-menu">
+                        <a href={% url "login" %} class="link-menu">{{request.user.username}}</a>
+                    </div>
+                    <div class="portada-menu">
+                        <form action={% url "logout" %} method="post">
+                            {% csrf_token %}
+                            <div class="link-menu">
+                                <input  type="submit" value="Cerrar Sesion">
+                            </div>
+                        </form>
+                    </div>
+                
+                    <div class="portada-menu">
+                        <a> {{hora}} </a>
+                    </div>
+                    {%else%}
+                    <div class="portada-menu">
+                        <a href={% url "login" %} class="link-menu">Iniciar Sesion</a>
+                    </div>
+                    <div class="portada-menu">
+                        <a href={% url "registro" %} class="link-menu">Registrarse</a>
+                    </div>
+                {%endif%}
+                       
+
+            </section>
+         
+        </nav>
+    </header>
+
+    <main>
+              
+
+        <section class="principal">
+            <h2>{% block h1_header %} {%endblock h1_header%}</h2>
+            {% block contenido %}
+            {% endblock contenido %}
+        </section>   
+    </main>
+
+    <footer >
+        
+        <section class="pie-pagina">
+            <nav>
+                    <div>
+                        <a href={% url "contactenos" %} class="link-menu">Contactenos</a>
+                        
+                    </div>
+                    <div>
+                        <a href={% url "acercademi" %} class="link-menu">Quienes somos</a>
+                    </div>                       
+            </nav>
+        </section>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+</body>
+</html>

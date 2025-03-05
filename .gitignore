@@ -150,6 +150,7 @@ venv.bak/
 # mkdocs documentation
 /site
 
+
 # mypy
 .mypy_cache/
 .dmypy.json
@@ -285,3 +286,4 @@ pyrightconfig.json
 # End of https://www.toptal.com/developers/gitignore/api/python,django,visualstudiocode
 
 entrega3.venv
+varios1

@@ -2,12 +2,15 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime
 from inicio.models import Mascota
-from inicio.forms import CrearMascota
-from inicio.forms import BuscarMascota
+from inicio.forms import CrearMascota, BuscarMascota, ModificarMascota
+from django.views.generic.edit import UpdateView, DeleteView
+from django.urls import reverse_lazy
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.contrib.auth.decorators import login_required
 
 # Create your views here.
 def inicio(request):
-    #return HttpResponse("<h1>vista<h1>")
+    
     hora_actual = datetime.now()
     return render (request, 'inicio/inicio.html', {'hora':hora_actual})
 
@@ -21,7 +24,7 @@ def crear_mascota(request):
     if request.method == "POST":
         formulario = CrearMascota(request.POST)
         if formulario.is_valid():
-            
+            animal = formulario.cleaned_data.get('animal')          
             nombre = formulario.cleaned_data.get('nombre')
             raza = formulario.cleaned_data.get('raza')
             color = formulario.cleaned_data.get('color')
@@ -34,24 +37,58 @@ def crear_mascota(request):
             medicacion2 = formulario.cleaned_data.get('medicacion2')
             dosis2 = formulario.cleaned_data.get('dosis2')
             comentarios = formulario.cleaned_data.get('comentarios')
+            fecha_creacion = formulario.cleaned_data.get('fecha_creacion')
             
           
-            mascota= Mascota(nombre=nombre, raza=raza, sexo=sexo, color=color, peso=peso, año_nacimiento=año_nacimiento, enfermedades=enfermedades, medicacion1=medicacion1, dosis1=dosis1, medicacion2=medicacion2, dosis2=dosis2, comentarios=comentarios)
+            mascota= Mascota(animal=animal, fecha_creacion=fecha_creacion, nombre=nombre, raza=raza, sexo=sexo, color=color, peso=peso, año_nacimiento=año_nacimiento, enfermedades=enfermedades, medicacion1=medicacion1, dosis1=dosis1, medicacion2=medicacion2, dosis2=dosis2, comentarios=comentarios)
             mascota.save()
             
             return redirect("datos_de_mascotas")
             
-    return render (request, 'crearmascota.html', {'formulario': formulario})
+    return render (request, 'inicio/crearmascota.html', {'formulario': formulario})
+
 
 def datos_de_mascotas(request):
       
     mascotas = Mascota.objects.all()
     formulario = BuscarMascota(request.GET)
     if formulario.is_valid():
+        animal_a_buscar = formulario.cleaned_data.get('animal')
         nombre_a_buscar = formulario.cleaned_data.get('nombre')
-        enfermedades_a_buscar = formulario.cleaned_data.get('enfermedades')
-        medicacion1_a_buscar = formulario.cleaned_data.get('medicacion1')
-        medicacion2_a_buscar = formulario.cleaned_data.get('medicacion2')
-        mascotas = Mascota.objects.filter(nombre__icontains=nombre_a_buscar, enfermedades__icontains=enfermedades_a_buscar, medicacion1__icontains=medicacion1_a_buscar, medicacion2__icontains=medicacion2_a_buscar)
-        
-    return render(request, 'datosdemascotas.html', {'mascotas':mascotas, 'formulario': formulario})
+        raza_a_buscar = formulario.cleaned_data.get('raza') 
+        mascotas = Mascota.objects.filter(animal__icontains=animal_a_buscar, raza__icontains=raza_a_buscar, nombre__icontains=nombre_a_buscar) 
+    return render(request, 'inicio/datosdemascotas.html', {'mascotas':mascotas, 'formulario': formulario})
+
+@login_required
+def ver_mascotas(request, id_mascota):
+
+    mascota = Mascota.objects.get (id=id_mascota)
+    return render (request, 'inicio/vermascotas.html', {'mascota':mascota}) 
+
+
+#CLASES BASADAS EN VISTAS
+class ModificarMascotaVista(LoginRequiredMixin, UpdateView):
+    model = Mascota
+    template_name= "inicio/CBV/modificarmascotas.html"
+    form_class = ModificarMascota
+    success_url = reverse_lazy ('datos_de_mascotas')
+
+class EliminarMascotaVista(LoginRequiredMixin, DeleteView):
+    model = Mascota
+    template_name= "inicio/CBV/eliminarmascotas.html"
+    success_url = reverse_lazy ('datos_de_mascotas')
+    
+
+def contactenos(request):
+      
+    return render (request, 'inicio/contactenos.html')
+
+def acercademi(request):
+      
+    return render (request, 'inicio/acercademi.html')
+
+
+
+    
+
+    

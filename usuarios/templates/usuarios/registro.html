@@ -1,0 +1,13 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Registro {%endblock h1_header%}
+{% block contenido %}
+    <form action="registro" method="POST">
+
+        {% csrf_token %}
+        {{formulario}}
+
+        <input type="submit" value="Guardar">
+    
+    </form>
+{% endblock contenido %}

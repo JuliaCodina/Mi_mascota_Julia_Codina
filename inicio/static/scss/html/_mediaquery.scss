@@ -1,0 +1,272 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "fonts";
+
+
+/*----------------------MEDIA QUERY-------------------------*/
+
+/*...............MOBILE...............*/
+
+@media only screen and (min-width: 320px) and (max-width: 599px) {
+    
+    /*HEADER*/
+    
+        /*portada*/
+                
+            .portada-imagen{ 
+                    width: 150%;
+                    margin-left: 20%;
+                    padding-left: 20%;
+                }
+            
+    
+            .portada-titulo{
+                font-size: 60%;
+                /*grid*/
+                @include grid-portada-titulo;
+            }
+            
+        /*menu*/
+    
+            .portada-menu {
+                a{
+                    display:none;
+                } 
+            }
+    
+            .dropdown-toggle{
+                width: 80%;
+            }
+    
+            .dropdown-item{
+                font-size: 80%;
+            }
+    
+    /*MAIN*/
+    
+        /*inicio*/
+    
+            #inicio-sesion{
+                padding: 0px;
+                }
+        
+            .contraseña{
+                margin-left: 0px;
+                }
+                
+            .boton-entrar{
+                margin-left: 0px;
+                }
+                
+    
+        /*imagenes cuenta*/
+    
+            .img1{
+                width: 300px;   
+                margin: 10px;
+            }
+            .img2{
+                width: 300px;   
+                margin: 10px;
+            }
+            .img3{
+                width: 300px;   
+                margin: 10px;
+            }
+    
+        /*formulario*/
+    
+            label{
+                font-size: 80%;
+            }
+    
+            #formulario-rellenar{
+                font-size: 80%;
+                
+            }
+    
+            #formulario-fecha{
+                font-size: 80%;
+                
+            }
+    
+            #formulario-menu{
+                font-size: 80%;  
+            }
+    
+            #formulario-rellenar1{
+                width: 100% ;
+            }
+    
+            .button{
+                width: 69%;
+                font-size: 15px;
+            }
+
+       
+
+            /*videos comunidad*/
+    
+            .video{
+                width: 100%;  
+                height: 100%;
+                
+            }
+
+            .img2{
+                width: 300px;   
+                margin: 10px;
+            }
+            .img3{
+                width: 300px;   
+                margin: 10px;
+            }
+    }
+    
+    /*.................TABLET.................*/
+    
+    @media only screen and (min-width: 600px) and (max-width: 1024px) {
+        
+    /*HEADER*/
+    
+        /*Portada*/
+         
+            .portada-imagen{ 
+                width: 100%;
+                margin-left: 5%;
+                padding-left: 5%;
+            }
+    
+            .portada-titulo{
+                font-size: 90%;
+                /*grid*/
+                @include grid-portada-titulo;
+            }
+        
+        /*Menu*/
+    
+            .portada-menu {
+                a{
+                    display:none;
+                } 
+            }
+    
+            .dropdown-toggle{
+                width: 100%;
+            }
+    
+            .dropdown-item{
+                font-size: 100%;
+            }
+    
+    /*MAIN*/
+    
+        /*inicio sesión*/
+    
+            .boton-entrar{
+                margin-left: 0px;
+            }
+
+        /*imagenes cuenta*/
+    
+            .img1{ 
+                width: 400px;   
+                margin: 10px;
+                }
+            .img2{ 
+                width: 400px;   
+                margin: 10px;
+                }
+            .img3{ 
+                width: 400px;   
+                margin: 10px;
+                }
+    
+        /*formulario*/
+    
+            label{
+                font-size: 80%;
+            }
+    
+            #formulario-rellenar{
+                font-size: 80%;
+            }
+    
+            #formulario-fecha{
+                font-size: 80%;    
+            }
+    
+            #formulario-menu{
+                font-size: 80%;  
+            }
+    
+            #formulario-rellenar1{
+                width: 100% ;
+            }
+    
+            .button{
+                width: 15%;
+                font-size: 20px;
+            }
+
+            /*videos comunidad*/
+            
+            .video{
+                width: 750px;  
+                height: 531px;
+                
+            }
+       
+    }
+    
+    /*......................DESKTOP.................*/
+    
+    @media only screen and (min-width: 1025px) {
+    
+        body{
+            background-color: $principal-color;
+            }
+        
+        /*Portada*/
+         
+        .portada-imagen{ 
+            width: 150%;
+            margin-left: 5%;
+            padding-left: 5%;
+        }
+
+        .portada-titulo{
+            font-size: 90%;
+            /*grid*/
+            @include grid-portada-titulo;
+        }
+           
+        .portada-bootstrap{
+            opacity:0;
+            
+        }
+        
+         /*imagenes cuenta*/
+    
+         .img1{ 
+            width: 380px;   
+            margin: 10px;
+            }
+        .img2{ 
+            width: 380px;   
+            margin: 10px;
+            }
+        .img3{ 
+            width: 380px;   
+            margin: 10px;
+            }
+        
+        /*videos comunidad*/
+        
+        .video{
+            width: 750px;  
+            height: 531px;
+        }
+
+
+    }

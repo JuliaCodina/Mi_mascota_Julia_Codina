@@ -1,0 +1,51 @@
+@import "../utilities/variables";
+
+/*textos*/
+
+h1{
+    font-family: $principal-font;
+    font-optical-sizing:auto;
+    font-weight: 900;
+    font-style:normal;
+    color: $principal-text-color;
+    font-size: 250%;
+}
+
+h2{
+    font-family: $principal-font;
+    font-optical-sizing:auto;
+    font-weight: 800;
+    font-style:normal;
+    font-size: 100%;
+    color: $secondary-text-color;
+}
+
+h3{
+    font-family: $principal-font;
+    font-optical-sizing:auto;
+    font-weight: 600;
+    font-style:normal;
+    font-size: 18px;
+    color: $secondary-text-color;
+}
+
+h4{
+    font-family: $principal-font;
+    font-optical-sizing:auto;
+    font-weight: 600;
+    font-style:normal;
+    color: $secondary-text-color;
+    font-size: 200%;
+}
+
+a{
+    font-family: $principal-font;
+    font-size: 80%;
+}
+
+a:link, a:visited, a:hover, a:active {
+    color: $button-color;
+    text-decoration: none;
+}
+
+

@@ -1,0 +1,15 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Modificar Mascota {{mascota.nombre}} {%endblock h1_header%}
+{% block contenido %}
+
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        {{form}}
+
+        <input type="submit" value="Editar">
+
+    </form>
+{% endblock contenido %}

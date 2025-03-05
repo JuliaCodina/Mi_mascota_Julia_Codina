@@ -1,0 +1,26 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Datos de Mascotas {%endblock h1_header%}
+{% block contenido %}
+     <form action="">
+        {{formulario}}
+        <input type="submit" value="Buscar">
+    </form>
+
+    {% if mascotas %}
+
+        <ul>
+            {% for mascota in mascotas %}
+            <li>
+                {{mascota.animal}} {{mascota.nombre}} {{mascota.raza}} {{mascota.color}}
+                <a href={% url "eliminar_mascotas" mascota.id %}>  Eliminar  </a>
+                <a href={% url 'ver_mascotas' mascota.id %}>  Ver  </a>
+                <a href={% url 'modificar_mascotas' mascota.id %}>  Editar  </a>
+            </li>
+            {% endfor %}
+        </ul>
+
+    {% else %}
+    <p>No hay mascotas cargadas</p>
+    {% endif %}
+{% endblock contenido %}

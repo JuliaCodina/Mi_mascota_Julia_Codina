@@ -1,0 +1,330 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "fonts";
+
+header{
+
+            background-color: $principal-color;
+                
+            #portada{
+                /*Título*/
+                margin: 0px;
+                @include grid_portada;
+
+                    .portada-imagen{
+                        /*flex*/
+                        @include flex;
+                    }
+                    
+                    .portada-titulo{
+                        /*grid*/
+                        @include grid-portada-titulo;
+                        /*flex*/
+                        @include flex;
+                    }
+            }         
+
+            #menu-3col{
+                /*Menú*/
+                background-color: $terciary-color;
+                margin: 0px;
+                /*grid*/
+                @include grid_menu-3col;
+
+                div{
+                    display:inline-block;
+                    padding: 2px 10px 2px 10px;
+                    /*flex*/
+                    @include flex;
+                    padding: 5px;
+                    margin: 0px;
+                    font-weight: 600;
+                              
+                    .portada-menu{                   
+                        background-color: $terciary-color;
+                        font-family: $principal-font;
+                        font-optical-sizing:auto;
+                        font-weight: 600;
+                        font-style:normal;
+                        font-size: 5%;
+                        color: $secondary-text-color;
+                        text-decoration: none;
+                        
+                    }
+
+                    &:hover {
+                        color: $secondary-text-color;
+                        font-weight: 900;
+                        text-decoration: none  
+                    }
+                }
+                
+                    .portada-bootstrap{
+                        background-color: $terciary-color;
+                        font-family: $principal-font;
+                        font-optical-sizing:auto;
+                        font-weight: 600;
+                        font-style:normal;
+                        font-size: 18px;
+                        color: $button-color;
+                        padding: 5px;
+                        margin: 0px;
+                        list-style:none;
+                        /*flex*/
+                        @include flex; 
+                            
+                            .dropdown-toggle{
+                                background-color: $terciary-color;
+                                color: $button-color;
+                                border-color: $terciary-color;
+                                @include padding-top-bottom-0;
+                                @include border-top-bottom-0;
+                                /*flex*/
+                                @include flex; 
+                            }
+    
+                            .dropdown-toggle:hover {
+                                border: solid black 1px;
+                            }
+    
+                            .dropdown-menu{
+                                background-color: $terciary-color;
+                                font-family: $principal-font;
+                                font-optical-sizing:auto;
+                                font-weight: 600;
+                                font-style:normal;
+                                font-size: 18px;
+                                color: $button-color;
+                                border-color: $terciary-color;
+    
+                                .dropdown-item{
+                                    background-color: $terciary-color;
+                                    color: $secondary-text-color;
+                                }
+    
+                                .dropdown-item:hover {
+                                    background-color: $principal-color;
+                                    color: $secondary-text-color;
+                                    font-weight: 900;
+                                    font-size:20px;
+                                }
+                                    
+                                .dropdown-item:visited {
+                                    text-decoration: none;
+                                    color: $button-color;
+                                }
+                                    
+                                .dropdown-item:link {
+                                    text-decoration: none;
+                                    color: $button-color;
+                                }    
+                                    
+                            }   
+                        }
+                    }
+                
+            
+
+            #menu-7col{
+                /*Menú*/
+                background-color: $terciary-color;
+                margin: 0px;
+                /*grid*/
+                @include grid_menu-7col;
+
+                //alineacion textos menu
+                div{
+                    display:inline-block;
+                    padding: 2px 10px 2px 10px;
+                    /*flex*/
+                    @include flex;
+                    padding: 5px;
+                    margin: 0px;
+                    font-weight: 600;
+                              
+                    .portada-menu{                   
+                        background-color: $terciary-color;
+                        font-family: $principal-font;
+                        font-optical-sizing:auto;
+                        font-weight: 600;
+                        font-style:normal;
+                        font-size: 5%;
+                        color: $secondary-text-color;
+                        text-decoration: none;
+                        
+                    }
+
+                    &:hover {
+                        color: $secondary-text-color;
+                        font-weight: 900;
+                        text-decoration: none  
+                    }
+                }
+
+                .portada-bootstrap{
+                    background-color: $terciary-color;
+                    font-family: $principal-font;
+                    font-optical-sizing:auto;
+                    font-weight: 600;
+                    font-style:normal;
+                    font-size: 18px;
+                    color: $button-color;
+                    padding: 5px;
+                    margin: 0px;
+                    list-style:none;
+                    /*flex*/
+                    @include flex; 
+                        
+                        .dropdown-toggle{
+                            background-color: $terciary-color;
+                            color: $button-color;
+                            border-color: $terciary-color;
+                            @include padding-top-bottom-0;
+                            @include border-top-bottom-0;
+                            /*flex*/
+                            @include flex; 
+                        }
+
+                        .dropdown-toggle:hover {
+                            border: solid black 1px;
+                        }
+
+                        .dropdown-menu{
+                            background-color: $terciary-color;
+                            font-family: $principal-font;
+                            font-optical-sizing:auto;
+                            font-weight: 600;
+                            font-style:normal;
+                            font-size: 18px;
+                            color: $button-color;
+                            border-color: $terciary-color;
+
+                            .dropdown-item{
+                                background-color: $terciary-color;
+                                color: $secondary-text-color;
+                            }
+
+                            .dropdown-item:hover {
+                                background-color: $principal-color;
+                                color: $secondary-text-color;
+                                font-weight: 900;
+                                font-size:20px;
+                            }
+                                
+                            .dropdown-item:visited {
+                                text-decoration: none;
+                                color: $button-color;
+                            }
+                                
+                            .dropdown-item:link {
+                                text-decoration: none;
+                                color: $button-color;
+                            }    
+                                
+                        }   
+                }
+            }
+                    
+                
+        
+
+            #menu-5col{
+                /*Menú*/
+                background-color: $terciary-color;
+                margin: 0px;
+                /*grid*/
+                @include grid_menu-5col;
+
+                div{
+
+                    display:inline-block;
+                    padding: 2px 10px 2px 10px;
+                    /*flex*/
+                    @include flex;
+                    padding: 5px;
+                    margin: 0px;
+                    font-weight: 600;
+                              
+                    .portada-menu{                   
+                        background-color: $terciary-color;
+                        font-family: $principal-font;
+                        font-optical-sizing:auto;
+                        font-weight: 600;
+                        font-style:normal;
+                        font-size: 5%;
+                        color: $secondary-text-color;
+                    text-decoration: none;  
+                    }
+
+                    &:hover {
+                        color: $secondary-text-color;
+                        font-weight: 900;
+                        text-decoration: none  
+                    }
+                }
+                
+                .portada-bootstrap{
+                    background-color: $terciary-color;
+                    font-family: $principal-font;
+                    font-optical-sizing:auto;
+                    font-weight: 600;
+                    font-style:normal;
+                    font-size: 18px;
+                    color: $button-color;
+                    padding: 5px;
+                    margin: 0px;
+                    list-style:none;
+                    /*flex*/
+                    @include flex; 
+                        
+                        .dropdown-toggle{
+                            background-color: $terciary-color;
+                            color: $button-color;
+                            border-color: $terciary-color;
+                            @include padding-top-bottom-0;
+                            @include border-top-bottom-0;
+                            /*flex*/
+                            @include flex; 
+                        }
+
+                        .dropdown-toggle:hover {
+                            border: solid black 1px;
+                        }
+
+                        .dropdown-menu{
+                            background-color: $terciary-color;
+                            font-family: $principal-font;
+                            font-optical-sizing:auto;
+                            font-weight: 600;
+                            font-style:normal;
+                            font-size: 18px;
+                            color: $button-color;
+                            border-color: $terciary-color;
+
+                            .dropdown-item{
+                                background-color: $terciary-color;
+                                color: $secondary-text-color;
+                            }
+
+                            .dropdown-item:hover {
+                                background-color: $principal-color;
+                                color: $secondary-text-color;
+                                font-weight: 900;
+                                font-size:20px;
+                            }
+                                
+                            .dropdown-item:visited {
+                                text-decoration: none;
+                                color: $button-color;
+                            }
+                                
+                            .dropdown-item:link {
+                                text-decoration: none;
+                                color: $button-color;
+                            }    
+                                
+                        }   
+                    }
+            }       
+        }
+        

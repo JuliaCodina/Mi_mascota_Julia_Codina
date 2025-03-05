@@ -1,0 +1,29 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Ver Mascota {%endblock h1_header%}
+{% block contenido %}
+    
+  
+    <section id="quienes" >
+
+        <ul>
+            <li>Animal: {{mascota.animal}}</li>
+            <li>Nombre: {{mascota.nombre}}</li>
+            <li>Raza: {{mascota.raza}}</li>
+            <li>Color: {{mascota.color}}</li>
+            <li>Peso: {{mascota.peso}}</li>
+            <li>Sexo: {{mascota.sexo}}</li>
+            <li>Año de nacimient: {{mascota.año_nacimiento}}</li>
+            <li>Enfermedades: {{mascota.enfermedades}}</li>
+            <li>Medicacion 1: {{mascota.medicacion1}}</li>
+            <li>Dosis medicacion 1: {{mascota.dosis1}}</li>
+            <li>Medicacion 2: {{mascota.medicacion2}}</li>
+            <li>Dosis medicacion 2: {{mascota.dosis2}}</li>
+            <li>Comentarios: {{mascota.comentarios}}</li>
+            <li>Fecha de creación: {{mascota.fecha_creacion}}</li>
+
+        </ul>
+        
+    </section>   
+
+{% endblock contenido %}

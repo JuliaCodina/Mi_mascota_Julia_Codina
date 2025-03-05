@@ -1,0 +1,27 @@
+//comentarios en sass
+
+
+@import "utilities/variables";
+@import "utilities/mixins";
+
+
+@import "html/mediaquery";
+
+@import "html/fonts";
+
+body{
+
+    background-color: $secondary-color;
+ 
+    #pagina{
+        margin:0%;
+        padding:0%; 
+    }
+
+    @import "html/header";
+    @import "html/main";
+    @import "html/main-hc";
+    @import "html/footer";
+}
+
+

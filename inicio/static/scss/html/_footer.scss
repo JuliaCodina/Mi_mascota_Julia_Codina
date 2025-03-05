@@ -1,0 +1,41 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "fonts";
+      
+        
+/*----------------------ESTILOS DEL FOOTER-------------------*/  
+    
+        footer{
+
+            background-color: $principal-color;
+            padding: 5px;
+            margin: 0px;
+
+             div{
+                display:inline-block;
+                padding: 2px 10px 2px 10px;
+                font-weight: 600;
+      
+                .pie-pagina{
+                    font-family: $principal-font;
+                    font-optical-sizing:auto;
+                    font-style:normal;
+                    font-size: 15px;
+                    color: $secondary-text-color;
+                    background-color: $principal-color;
+                    list-style: none;
+                }
+                                
+                a:visited, a:link, a:active{
+                    color: $secondary-text-color;
+                    text-decoration: none;
+                }
+                            
+                a:hover{
+                    color: $secondary-text-color;
+                    font-weight: 900;
+                }
+                        
+            }     
+        } 
+            

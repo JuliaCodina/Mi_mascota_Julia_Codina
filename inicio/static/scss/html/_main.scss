@@ -1,0 +1,107 @@
+@import "../utilities/variables";
+@import "../utilities/mixins";
+@import "fonts";
+
+
+main{
+
+    background-color: $principal-color;
+
+    p{
+        font-family: $principal-font;
+        font-optical-sizing:auto;
+        font-weight: 600;
+        font-style:normal;
+        font-size: 18px;
+        color: $principal-text-color;
+    }
+
+    .principal{
+        /*inicio de sesión*/
+        background-color: $secondary-color;
+        margin: 0%;
+        padding: 20px;
+
+        @import "main-hc.scss";
+
+        .notificacion{
+            @include flex
+        }
+
+      
+
+        #inicio-sesion{
+            font-family: $principal-font;
+            font-optical-sizing:auto;
+            font-weight: 600;
+            font-style:normal;
+            font-size: 20px;
+            color: $secondary-text-color;
+            padding: 20px;
+            
+            div{
+                display:inline-block;
+                padding: 2px 10px 2px 10px;
+
+                .contraseña{
+                    margin-left: 20px;
+                }
+            
+                .boton-entrar{
+                    margin-left: 20px;
+                }
+            }
+        }
+            
+        .flex-cuentas{
+            @include flex-wrap;
+                    
+            .img1{ 
+                    flex-direction: column;
+            }
+        } 
+        
+        #perfil{
+            padding-left: 20px;
+            @include buttons;
+
+            .grid-container-formulario {
+                @include grid-container-formulario;
+                
+                .grid-item-hc {
+                    border: 1px black;
+                                                
+                    #formulario-linea {
+                        padding: 10px  0px 10px 0px;
+                    }
+                }   
+            } 
+        }
+        
+
+        
+        
+    
+      
+            
+       
+        
+        .listas-main-comunidad{
+            font-family: $principal-font;
+            font-optical-sizing:auto;
+            font-weight: 500;
+            font-style:normal;
+            font-size: 16px;
+            color: $principal-text-color;    
+        }
+        
+        .listas-main-index{
+            font-family: $principal-font;
+            font-optical-sizing:auto;
+            font-weight: 500;
+            font-style:normal;
+            font-size: 16px;
+            color: $principal-text-color;    
+        }
+    }
+}

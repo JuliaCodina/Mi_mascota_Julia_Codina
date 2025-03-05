@@ -1,0 +1,15 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Confirmar borrado de Mascota {{mascota.nombre}} {%endblock h1_header%}
+{% block contenido %}
+
+
+    <form action="" method="POST">
+
+        {% csrf_token %}
+        
+        <input type="submit" value="Confirmar">
+
+    </form>
+{% endblock contenido %}
+
