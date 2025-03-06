@@ -43,6 +43,9 @@
                 <div class="portada-menu">
                     <a href={% url "datos_de_mascotas" %} class="link-menu">Datos de Mascotas</a>
                 </div>
+                <div class="portada-menu">
+                    <a href={% url "editarperfil" %} class="link-menu">Editar Perfil</a>
+                </div>
                 {% if request.user.is_authenticated %}
                     <div class="portada-menu">
                         <a href={% url "login" %} class="link-menu">{{request.user.username}}</a>

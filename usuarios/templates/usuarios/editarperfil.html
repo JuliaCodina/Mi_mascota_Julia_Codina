@@ -1,0 +1,15 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Editar Perfil {%endblock h1_header%}
+{% block contenido %}
+    <form action={% url "editarperfil" %} method="POST">
+
+        {% csrf_token %}
+
+        {{formulario}}
+
+        <input type="submit" value="Editar">
+    
+    </form>
+    <a href= {% url "cambiarpass" %} >Cambiar Contraseña</a>
+{% endblock contenido %}
