@@ -18,9 +18,9 @@ class FormularioRegistro (UserCreationForm):
 
 class FormularioEdicion (UserChangeForm):
         password = None
-
+        avatar = forms.ImageField(required=False)
+        Mascota_preferida = forms.CharField(required=False, widget=forms.Textarea)
         
         class Meta:
             model = User
-            exclude = ['password','username','last_login', 'groups', 'user_permissions','date_joined', 'username_validator', 'is_staff', 'is_active', 'password1','password2', 'is_superuser']
-            
+            fields = ['avatar','first_name','last_name','email']

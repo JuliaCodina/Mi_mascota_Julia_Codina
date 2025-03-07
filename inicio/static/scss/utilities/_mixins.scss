@@ -59,6 +59,13 @@
     grid-template-columns: 1fr 2fr; 
 }
 
+@mixin grid_menu-9col{
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-columns: repeat(9, 1fr);
+}
+
+
 
 
 //Dropdown

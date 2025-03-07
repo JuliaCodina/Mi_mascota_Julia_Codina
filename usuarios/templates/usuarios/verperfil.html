@@ -1,0 +1,20 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Perfil {%endblock h1_header%}
+{% block contenido %}
+    
+  
+    <section id="quienes" >
+
+        <ul>
+            <li>
+            {%if request.user.infoextra.avatar%}
+                <img src={{request.user.infoextra.avatar.url}} alt ="" height='40px'>
+            {%endif%}
+            </li>
+            <li>Nombre: {{user.first_name}} {{user.last_name}}</li>
+            <li>Correo Electrónico: {{user.email}}</li>
+            <li>Mascotas Preferidas: {{request.forms.FormularioEdicion.Mascota_preferida}}</li>
+
+        </ul>
+{% endblock contenido %}

@@ -1,5 +1,6 @@
 from django.db import models
 
+
 # Create your models here.
 class Mascota(models.Model):
     animal = models.TextField(null=True)
@@ -15,9 +16,11 @@ class Mascota(models.Model):
     medicacion2 = models.CharField(null=True,max_length=50)
     dosis2 = models.CharField(null=True,max_length=50)
     comentarios = models.TextField(null=True, blank=True)
-    #agregar campo imagen
     fecha_creacion = models.DateField(null=True)
     
     def __str__(self):
         return f"{self.nombre} {self.animal} {self.raza} {self.comentarios} {self.color} {self.peso} {self.sexo} {self.año_nacimiento} {self.enfermedades} {self.medicacion1} {self.medicacion2} {self.dosis1} {self.dosis2}"
 
+class InfoExtra(models.Model):
+    mascota = models.OneToOneField(Mascota, on_delete=models.CASCADE)
+    avatar_mascota = models.ImageField(upload_to='avatares_mascota',null=True, blank=True)

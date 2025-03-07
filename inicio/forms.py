@@ -2,6 +2,7 @@ from django import forms
 from inicio.models import Mascota
 
 class CrearMascota(forms.Form):
+    avatar_mascota = forms.ImageField(required=False)
     animal = forms.CharField(required=False, max_length=20)
     nombre = forms.CharField(max_length=20)
     raza = forms.CharField(max_length=20)

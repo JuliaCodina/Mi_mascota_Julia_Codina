@@ -1,6 +1,7 @@
 from inicio.views import inicio, crear_mascota, datos_de_mascotas, ver_mascotas, acercademi, contactenos, ModificarMascotaVista, EliminarMascotaVista
 from django.urls import path
 
+
 urlpatterns = [
     path('', inicio, name= 'inicio'),
     path('crearmascota/', crear_mascota, name='crear_mascota'),
