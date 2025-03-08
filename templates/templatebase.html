@@ -53,59 +53,17 @@
                         <a href={% url "datos_de_mascotas" %} class="link-menu">Datos de Mascotas</a>
                     </div>
                     <div class="portada-menu">
-                        <a href={% url "logout" %} class="link-menu">Cerrar Sesión</a>
+                        <form action={% url "logout" %} method="post">
+                            {% csrf_token %}
+                            <input  type="submit" value="Cerrar sesion" class="link-menu">
+                        </form>
+                              
                     </div>
                 {%endif%}    
                 
                 {%if request.user.infoextra.avatar%}
                     <img src={{request.user.infoextra.avatar.url}} alt ="" height='40px'>
                 {%endif%}
-
-<!--
-                <div class="portada-menu">
-                    <a href={% url "crear_mascota" %} class="link-menu">Crear Mascota</a>
-                </div>
-                <div class="portada-menu">
-                    <a href={% url "datos_de_mascotas" %} class="link-menu">Datos de Mascotas</a>
-                </div>
-                <div class="portada-menu">
-                    <a href={% url "editarperfil" %} class="link-menu">Editar Perfil</a>
-                </div>
-                {% if request.user.is_authenticated %}
-                    <div class="portada-menu">
-                        <a href={% url "verperfil" %} class="link-menu">
-                        <a href={% url "login" %} class="link-menu">
-
-                            {{request.user.username}}
-                            
-                            {%if request.user.infoextra.avatar%}
-                            <img src={{request.user.infoextra.avatar.url}} alt ="" height='40px'>
-                            {%endif%}
-                        </a>
-                    </div>
-                    <div class="portada-menu">
-                        <form action={% url "logout" %} method="post">
-                            {% csrf_token %}
-                            <div class="link-menu">
-                                <input  type="submit" value="Cerrar Sesion">
-                            </div>
-                        </form>
-                    </div>
-                    -->
-                
-                    
-
-                    <!--
-                    {%else%}
-                        <div class="portada-menu">
-                            <a href={% url "login" %} class="link-menu">Iniciar Sesion</a>
-                        </div>
-                        <div class="portada-menu">
-                            <a href={% url "registro" %} class="link-menu">Registrarse</a>
-                        </div>
-                {%endif%}
-                -->
-                       
 
             </section>
          
