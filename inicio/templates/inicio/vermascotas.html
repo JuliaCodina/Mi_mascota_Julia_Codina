@@ -21,7 +21,9 @@
             <li>Dosis medicacion 2: {{mascota.dosis2}}</li>
             <li>Comentarios: {{mascota.comentarios}}</li>
             <li>Fecha de creación: {{mascota.fecha_creacion}}</li>
-
+            {% if request.user.infoextra.avatar %}
+            <img src={{request.user.infoextra.avatar.url}} alt="" height='40px'>
+            {% endif %}
         </ul>
         
     </section>   

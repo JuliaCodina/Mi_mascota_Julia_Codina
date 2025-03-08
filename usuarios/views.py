@@ -44,17 +44,23 @@ def editarperfil (request):
     
     if request.method =='POST':
         formulario = FormularioEdicion(request.POST, request.FILES, instance=request.user)
+                
         if formulario.is_valid():
             
-            if formulario.cleaned_data.get('avatar'):
+            mascota_preferida = formulario.cleaned_data.get('Mascota_preferida') 
+            formulario.save(mascota_preferida)   
+            info_extra.save()
+             
+            if formulario.cleaned_data.get('avatar','mascota_preferida'):
                 info_extra.avatar = formulario.cleaned_data.get('avatar')
+                
                 
             info_extra.save()
             formulario.save()
                         
             return redirect ('verperfil')
     else:
-        formulario = FormularioEdicion(instance=request.user, initial={'avatar': info_extra.avatar})
+        formulario = FormularioEdicion (instance=request.user, initial={'avatar': info_extra.avatar})
     
     return render (request, 'usuarios/editarperfil.html', {'formulario':formulario})
 
@@ -62,6 +68,12 @@ class CambioPassword (PasswordChangeView):
     template_name = 'usuarios/cambiarpass.html'
     success_url = reverse_lazy ('inicio')
     
+#def verperfil (request, user_id):
+    
+    #user = User.objects.get(id=user_id)
+            
+    #return render(request, 'usuarios/verperfil.html', {'user': user})
+
 def verperfil (request):
     
     formulario = FormularioEdicion(request.GET, request.FILES, instance=request.user)

@@ -7,21 +7,17 @@ from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
-from inicio.models import InfoExtra
 
 # Create your views here.
 def inicio(request):
-    
-   
+     
     
     hora_actual = datetime.now()
     return render (request, 'inicio/inicio.html', {'hora':hora_actual})
 
 
 def crear_mascota (request):
-    
-    info_extra=request.user.infoextra
-    
+        
     print(request.GET)
     print(request.POST)
             
@@ -31,7 +27,7 @@ def crear_mascota (request):
     if request.method == "POST":
         formulario = CrearMascota(request.POST, request.FILES)
         if formulario.is_valid():
-            
+                       
             animal = formulario.cleaned_data.get('animal')          
             nombre = formulario.cleaned_data.get('nombre')
             raza = formulario.cleaned_data.get('raza')
@@ -46,15 +42,13 @@ def crear_mascota (request):
             dosis2 = formulario.cleaned_data.get('dosis2')
             comentarios = formulario.cleaned_data.get('comentarios')
             fecha_creacion = formulario.cleaned_data.get('fecha_creacion')
-           
-            if formulario.cleaned_data.get('avatar_mascota'):
-                
-                info_extra.avatar_mascota = formulario.cleaned_data.get('avatar_mascota') 
+            
+
             
             mascota= Mascota(animal=animal, fecha_creacion=fecha_creacion, nombre=nombre, raza=raza, sexo=sexo, color=color, peso=peso, año_nacimiento=año_nacimiento, enfermedades=enfermedades, medicacion1=medicacion1, dosis1=dosis1, medicacion2=medicacion2, dosis2=dosis2, comentarios=comentarios)
             
             mascota.save()
-            info_extra.save()
+
             
             return redirect("datos_de_mascotas")
             

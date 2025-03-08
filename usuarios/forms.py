@@ -1,6 +1,7 @@
 from django.contrib.auth.forms import UserCreationForm, UserChangeForm, PasswordChangeForm
 from django import forms
 from django.contrib.auth.models import User
+
 #from usuarios.views import login, registro
 
 class FormularioRegistro (UserCreationForm):
@@ -18,9 +19,10 @@ class FormularioRegistro (UserCreationForm):
 
 class FormularioEdicion (UserChangeForm):
         password = None
+        mascota_preferida = forms.CharField(required=False, widget=forms.Textarea)
         avatar = forms.ImageField(required=False)
-        Mascota_preferida = forms.CharField(required=False, widget=forms.Textarea)
         
+            
         class Meta:
             model = User
-            fields = ['avatar','first_name','last_name','email']
+            fields = ['avatar','first_name','last_name','email','mascota_preferida']
