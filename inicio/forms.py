@@ -1,8 +1,9 @@
 from django import forms
 from inicio.models import Mascota
+from inicio.models import AvatarMascota
 
 class CrearMascota(forms.Form):
-    avatar_mascota = forms.ImageField(required=False)
+    #avatar_mascota = forms.ImageField(required=False)
     animal = forms.CharField(required=False, max_length=20)
     nombre = forms.CharField(max_length=20)
     raza = forms.CharField(max_length=20)
@@ -28,4 +29,9 @@ class ModificarMascota (forms.ModelForm):
     class Meta:
         model= Mascota
         fields = '__all__'
-   
+
+class AvatarForm (forms.ModelForm):
+  
+    class Meta:
+        model = AvatarMascota
+        fields=['imagen']

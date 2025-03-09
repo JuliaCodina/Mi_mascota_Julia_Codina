@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Sistema para la gestión de la salud de una o varias mascotas. Funciona como un carnet de salud digital. Permite, entre otros, tener un historial médico centralizado, hacer un seguimiento de medicamentos, alimentación y ejercicio. Cuenta con una comunidad de apoyo">
+    <meta name="keywords" content="CELOS, ALERGIAS, VACUNAS, POLIVALENTE, RABIA, TRIPLE, FELINA, CANINA, VIF, VILEF, LABORATORIO, SANGRE, ANÁLISIS, ECOGRAFÍA, RADIOGRAFÍA, RAYOS, ECO, ELECTROCARDIOGRAMA, CORTE, PELO, PELUQUERÍA, BAÑO, COMUNIDAD, AYUDA, ASESORAMIENTO, ESTRÉS, ALIVIO, RELAJAR, RELAJACIÓN, COMIDA, SALUDABLE, INYECCIONES, INYECCIÓN, INOCULACIÓN, APLICACIÓN, DOSIS, MASAJES, PASTILLAS, SUERO, AGUJAS, VIAS, PERROS, GATOS, MASCOTA, MASCOTAS, SALUD, CELOS, ALERGIAS, VACUNACIÓN, VACUNAS, ENFERMEDAD, LABORATORIO, RAYOS, RADIOGRAFÍAS, SANGRE, ANÁLISIS, ECOGRAFÍA, ESTUDIOS, BIENESTAR, SISTEMA, INTEGRAL, GESTION, GESTIONAR, SEGUIMIENTO, VISITAS, VETERINARIO, CONTROL, VACUNAS, ADMINISTRACIÓN, MEDICAMENTOS, HISTORIAL, MEDICO, CENTRAL, CENTRALIZADO, REGISTRO, TRATAMIENTOS, PROCEDIMIENTOS, EVOLUCIÓN, VETERINARIOS, NUTRICIONISTA, RECETAS, DOSIS, HORARIOS, DIETA, EJERCICIO, NOTAS, ALIMENTACIÓN, ACTIVIDAD, FÍSICA, EQUILIBRIO, SALUDABLE, PROBLEMAS, PESO, COMUNIDAD, APOYO, CONSEJOS, HISTORIAS, EXPERIENCIAS, CARNET, VIDAS, FELICES">
+    <title>La salud de nuestras mascotas: presentacion y objetivos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body id="pagina">
+
+    <header>
+
+        <section id="portada">
+            <!--logo margen izquierdo-->
+                <div >
+                    <img src="../images/mi-mascota-logo.jpg" alt="Logo Mi Mascota" class="portada-imagen">
+                </div>
+        <!--título centrado-->           
+            <div class="portada-titulo">
+                <h1>
+                    MI MASCOTA 
+                </h1>
+            </div> 
+        </section>
+        <!--menú-->
+        <section id="menu-5col">
+            <div class="portada-menu">
+                <a href="#quienes" class="link-menu">Quienes Somos</a>
+            </div>
+            <div class="portada-menu">
+                <a href="#que" class="link-menu">Qué hacemos</a>
+            </div>
+            <div class="portada-menu">
+                <a href="pages/comunidad.html" class="link-menu">Comunidad</a>
+            </div>
+            <div class="portada-menu">
+                <a href="#app" class="link-menu">APP</a>
+            </div>
+             
+            <div class="portada-bootstrap">
+                <!--Dropdown Bootstrap-->
+                <div class="portada-dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-list" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5m0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5"/>
+                          </svg>
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li>
+                            <button class="dropdown-item" type="button">
+                                <a href="#quienes" class="link-menu">Quienes Somos</a>
+                                </a>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button">
+                                <a href="#que" class="link-menu">Qué hacemos</a>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button">
+                                <a href="pages/comunidad.html" class="link-menu">Comunidad</a>
+                            </button>
+                        </li>
+                        <li>
+                            <button class="dropdown-item" type="button">
+                                <a href="#app" class="link-menu">APP</a>
+                            </button>
+                        </li>
+                    </ul>
+                  </div>
+                </div>
+            </section>
+    </header>
+
+    <main>
+
+        <section class="principal">
+            <!--formulario para ingresar correo y contraseña, se debería hacer una página para registrarse-->
+            <section id="inicio-sesion">
+                <form>
+                    <!--correo electrónico-->
+                    <div class="email">
+                        <label for="" >EMAIL</label>
+                        <input type="email" name="" id="" >
+                    </div>
+                    <!--contraseña-->   
+                    <div class="contraseña">
+                        <label for="" >CONTRASEÑA</label>
+                        <input type="password" name="" id="">
+                    </div>
+                        <div class="boton-entrar">
+                        <a href="pages/cuenta.html"  class="link-menu">Entrar</a>
+                    </div>
+                </form>
+            </section>        
+
+            <section id="quienes" >
+                <h2>Quienes somos</h2>
+                <p>Somos un apasionado equipo de amantes de los animales, unidos por el cariño y la devoción hacia nuestras queridas mascotas. Cada uno de nosotros comparte una conexión especial con nuestros compañeros.
+                </p>
+                <p>Sin embargo, como cualquier dueño responsable, sabemos que cuidar de nuestras mascotas implica más que solo abrazos y caricias. La salud y el bienestar de nuestros amigos peludos son de suma importancia. Por eso, hemos decidido crear un sistema integral para gestionar todos los aspectos relacionados con su salud.
+                </p>
+            </section>
+            <section id="que" >
+                <h2>Qué hacemos</h2>   
+                <p>Nuestro sistema abarca desde el seguimiento de las visitas al veterinario hasta el control de las vacunas y la administración de medicamentos. Aquí hay un vistazo a algunas de las características clave:
+                </p>
+                    <ul class="listas-main-index">
+                        <li>
+                            Historial médico centralizado: Mantenemos un registro detallado de todas las visitas al veterinario, tratamientos y procedimientos realizados. Esto nos permite rastrear la evolución de la salud de nuestras mascotas a lo largo del tiempo. También se puede enviar facilmente esta información a sus veterinarios de confianza.
+                        </li>
+                        <li>
+                            Seguimiento de medicamentos: Llevamos un registro de los medicamentos recetados, las dosis y los horarios de administración. 
+                        </li>
+                        <li>
+                            Dieta y ejercicio: También incluimos un módulo de notas para registrar la alimentación diaria y el nivel de actividad física de nuestras mascotas. Esto nos ayuda a mantener un equilibrio saludable y prevenir problemas de peso.
+                        </li>
+                        <li>
+                            Comunidad de apoyo: Compartimos consejos, historias y experiencias con otros dueños de mascotas en nuestra comunidad en línea. Juntos, aprendemos y crecemos como amantes de los animales.
+                        </li>
+                    </ul>
+            <p>En resumen, nuestro sistema es como un “carnet de salud” digital para nuestras mascotas. Estamos emocionados de seguir mejorando y expandiendo esta plataforma para garantizar que nuestras queridas compañeras tengan vidas largas, felices y saludables.  
+                </p>
+            </section>
+            <section id="app" >
+                <h2>APP</h2> 
+                <p>Contamos con una aplicación para Android que se puede bajar de Google Play. Esta te facilitará contar con la información en todo momento </p>
+            </section>
+        </section>
+    </main>
+
+    <footer >
+        
+        <section class="pie-pagina">
+            <nav>
+                    <div>
+                        <a id="link-pie-pagina">Contactenos</a>
+                    </div>
+                    <div>
+                        <a id="link-pie-pagina">Mapa de Sitio</a>
+                    </div>
+                    <div>
+                        <a id="link-pie-pagina">Terminos y Condiciones</a>
+                    </div>                       
+            </nav>
+        </section>
+    </footer>
+ 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> 
+</body>
+</html>

@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 
 # Create your models here.
@@ -20,4 +21,11 @@ class Mascota(models.Model):
     
     def __str__(self):
         return f"{self.nombre} {self.animal} {self.raza} {self.comentarios} {self.color} {self.peso} {self.sexo} {self.año_nacimiento} {self.enfermedades} {self.medicacion1} {self.medicacion2} {self.dosis1} {self.dosis2}"
+    
+class AvatarMascota (models.Model):
+    user= models.OneToOneField(User, on_delete=models.CASCADE)
+    imagen=models.ImageField(upload_to='avatares', null=True, blank=True)
+    
+    def __str__ (self):
+        return f" {self.user.username} - {self.imagen}" 
 

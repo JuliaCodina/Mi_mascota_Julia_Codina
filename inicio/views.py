@@ -1,12 +1,13 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
 from datetime import datetime
-from inicio.models import Mascota
-from inicio.forms import CrearMascota, BuscarMascota, ModificarMascota
+from inicio.models import Mascota, AvatarMascota
+from inicio.forms import CrearMascota, BuscarMascota, ModificarMascota, AvatarForm
 from django.views.generic.edit import UpdateView, DeleteView
 from django.urls import reverse_lazy
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+
 
 # Create your views here.
 def inicio(request):
@@ -48,9 +49,8 @@ def crear_mascota (request):
             mascota= Mascota(animal=animal, fecha_creacion=fecha_creacion, nombre=nombre, raza=raza, sexo=sexo, color=color, peso=peso, año_nacimiento=año_nacimiento, enfermedades=enfermedades, medicacion1=medicacion1, dosis1=dosis1, medicacion2=medicacion2, dosis2=dosis2, comentarios=comentarios)
             
             mascota.save()
-
             
-            return redirect("datos_de_mascotas")
+            return redirect("agregaravatarmascota")
             
     return render (request, 'inicio/crearmascota.html', {'formulario': formulario})
 
@@ -65,6 +65,31 @@ def datos_de_mascotas(request):
         raza_a_buscar = formulario.cleaned_data.get('raza') 
         mascotas = Mascota.objects.filter(animal__icontains=animal_a_buscar, raza__icontains=raza_a_buscar, nombre__icontains=nombre_a_buscar) 
     return render(request, 'inicio/datosdemascotas.html', {'mascotas':mascotas, 'formulario': formulario})
+
+def agregaravatarmascota(request):
+    
+    avatarmascota=request.user.infoextra
+ 
+    if request.method=='POST':
+        form =AvatarForm (request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            avatarmascota.save()
+            return redirect("datos_de_mascotas")
+    else:
+        form=AvatarForm (instance=avatarmascota)
+        avatarmascota.save()
+    return render(request, 'inicio/agregaravatarmascota.html', {'form':form})   
+ 
+"""
+    if request.method=='POST':
+        form =AvatarForm (request.POST, request.FILES, instance=request.user)
+        if form.is_valid():
+            form.save()
+            return redirect("datos_de_mascotas")
+    else:
+        form=AvatarForm (instance=request.user)
+    return render(request, 'inicio/agregaravatarmascota.html', {'form':form})
+""" 
 
 @login_required
 def ver_mascotas(request, id_mascota):

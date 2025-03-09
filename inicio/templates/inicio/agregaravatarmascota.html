@@ -1,0 +1,11 @@
+{% extends "templatebase.html" %}
+{% load static %}   
+{% block h1_header %} Agregue una imagen de su mascota {%endblock h1_header%}
+{% block contenido %}
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit">Subir</button>
+
+    </form>
+{% endblock contenido %}
